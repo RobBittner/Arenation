@@ -27,9 +27,13 @@ namespace Arenation {
     /// The form 1.
     /// </summary>
     public partial class Form1 : Form {
+
+	    private GlobalKeyboardHook _globalKeyboardHook;
+
+
     private WaveOut waveOutDevice;
 
-    private string musicRoot = @"C:\Users\bittnerrd\Dropbox\MP3";
+    private string musicRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
 
 
     public List<Album> PotentialAlbums = new List<Album>();
@@ -43,6 +47,9 @@ namespace Arenation {
     /// </summary>
     public Form1() {
       this.InitializeComponent();
+
+      _globalKeyboardHook = new GlobalKeyboardHook();
+      _globalKeyboardHook.KeyboardPressed += OnKeyPressed;
 
       this.PopulatePontentialAlbums();
 
@@ -62,6 +69,20 @@ namespace Arenation {
       } else {
         prefs.LoadXml("<arenation><queuedAlbums/><albums/></arenation>");
       }
+    }
+
+    ~Form1() {
+	    this._globalKeyboardHook?.Dispose();
+    }
+
+
+    private void OnKeyPressed(object sender, GlobalKeyboardHookEventArgs e) {
+	    if (e.KeyboardData.VirtualCode == GlobalKeyboardHook.MMPrev) return;
+			if (e.KeyboardData.VirtualCode == GlobalKeyboardHook.MMNext) return;
+			if (e.KeyboardData.VirtualCode == GlobalKeyboardHook.MMPlay) {
+				PlayPause();
+				e.Handled = true;
+			}
     }
 
     
@@ -139,8 +160,12 @@ namespace Arenation {
     }
 
     private void PlayPauseButtonClick(object sender, EventArgs e) {
+	    PlayPause();
+    }
 
-      if (this.waveOutDevice.PlaybackState == PlaybackState.Playing) {
+    private void PlayPause() {
+
+	    if (this.waveOutDevice.PlaybackState == PlaybackState.Playing) {
         this.PlayPauseButton.Text = ">";
         this.waveOutDevice.Pause();
         return;

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arenation", "Arenation\Arenation.csproj", "{478E4952-B02E-4EFC-99A0-F62736BDF0B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arenation", "Arenation\Arenation.csproj", "{3386575A-7E08-48A9-A860-E456B8A53E6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{478E4952-B02E-4EFC-99A0-F62736BDF0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{478E4952-B02E-4EFC-99A0-F62736BDF0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{478E4952-B02E-4EFC-99A0-F62736BDF0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{478E4952-B02E-4EFC-99A0-F62736BDF0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3386575A-7E08-48A9-A860-E456B8A53E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3386575A-7E08-48A9-A860-E456B8A53E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3386575A-7E08-48A9-A860-E456B8A53E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3386575A-7E08-48A9-A860-E456B8A53E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
